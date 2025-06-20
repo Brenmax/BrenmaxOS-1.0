@@ -1,0 +1,202 @@
+#SystemSetTB{
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.514);
+  margin-top: 0px;
+  font-family: Century Gothic;
+  align-content: center;
+  align-items: center;
+  font-size: 20px;
+  width: 100%;
+  margin-left: 0px;
+  border-width: 0px;
+  position: fixed;
+  
+  border-bottom-color: rgb(43, 43, 43);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  position: relative;
+}
+
+.SubSet1{
+  color: rgb(194, 194, 194);
+  font-size: 10px;
+  margin-top: -0px;
+  font-family: Century Gothic;
+}
+
+#button2736{
+    width: 100px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+#persett{
+  margin-left: 10px;
+  margin-top: 5px;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+#persett1{
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-family: System_SubLime;
+}
+
+#persett2{
+  margin-left: 10px;
+  margin-top:0px;
+  font-size: 12px;
+  color: rgb(161, 161, 161);
+  font-family: System_SubLime;
+}
+
+#persett4{
+  margin-left: 10px;
+  margin-top:0px;
+  font-size: 12px;
+  color: rgb(161, 161, 161);
+  font-family: System_SubLime;
+  animation-name: FadeIn;
+  animation-duration: 0.2s;
+}
+
+#Page5Set{
+  animation-name: FadeIn;
+  animation-duration: 0.2s;
+}
+
+#Page4Set{
+  animation-name: FadeIn;
+  animation-duration: 0.2s;
+}
+
+.Theme{
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  margin-left: 10px;
+  margin-top: 10px;
+  float: left;
+
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.521);
+
+  transition-duration: 0.1s;
+}
+
+.Theme:hover{
+  border-color: rgb(166, 166, 166);
+  border-width: 2px;
+} q 
+/* From Uiverse.io by namecho */ 
+.switch {
+ --button-width: 40px;
+ --button-height: 20px;
+ --toggle-diameter: 1.5em;
+ --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+ --toggle-shadow-offset: 10px;
+ --toggle-wider: 3em;
+ --color-grey: #cccccc;
+ --color-green: #4296f4;
+ margin-left: 10px;
+ position: relative;
+}
+
+.slider {
+ display: inline-block;
+ width: 40px;
+ height: 20px;
+ background-color: var(--color-grey);
+ border-radius: calc(var(--button-height) / 2);
+ position: relative;
+ transition: 0.3s all ease-in-out;
+}
+
+.slider::after {
+ content: "";
+ display: inline-block;
+ width: var(--toggle-diameter);
+ height: var(--toggle-diameter);
+ background-color: #fff;
+ border-radius: calc(var(--toggle-diameter) / 2);
+ position: absolute;
+ top: var(--button-toggle-offset);
+ transform: translateX(var(--button-toggle-offset));
+ box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+ transition: 0.3s all ease-in-out;
+}
+
+.switch input[type="checkbox"]:checked + .slider {
+ background-color: var(--color-green);
+}
+
+.switch input[type="checkbox"]:checked + .slider::after {
+ transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
+ box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+}
+
+.switch input[type="checkbox"] {
+ display: none;
+}
+
+.SubSet2{
+  margin-top: -5px;
+  font-size: 15px;
+}
+
+#ButtonSetting1{position: relative;margin-top: 10px; margin-left: 10px;font-family: System_SubLime;width: 310px;height: 45px;text-align: left;font-size: 17px; animation-name: FadeIn; animation-duration: 0.2s;;}
+#ButtonSetting2{position: relative;margin-top: 10px; margin-left: 10px;font-family: System_SubLime;width: 310px;height: 45px;text-align: left;font-size: 17px;animation-name: FadeIn; animation-duration: 0.2s}
+#ButtonSetting3{position: relative;margin-top: 10px; margin-left: 10px;font-family: System_SubLime;width: 310px;height: 45px;text-align: left;font-size: 17px;animation-name: FadeIn; animation-duration: 0.2s}
+#ButtonSetting4{position: relative;margin-top: 10px; margin-left: 10px;font-family: System_SubLime;width: 310px;height: 45px;text-align: left;font-size: 17px;animation-name: FadeIn; animation-duration: 0.2s}
+#ButtonSetting5{position: relative;margin-top: 10px; margin-left: 10px;font-family: System_SubLime;width: 310px;height: 45px;text-align: left;font-size: 17px;animation-name: FadeIn; animation-duration: 0.2s}
+#ButtonSetting6{position: relative;margin-top: 10px; margin-left: 10px;font-family: System_SubLime;width: 310px;height: 45px;text-align: left;font-size: 17px;animation-name: FadeIn; animation-duration: 0.2s}
+#ButtonSetting7{position: relative;margin-top: 10px; margin-left: 10px;font-family: System_SubLime;width: 310px;height: 45px;text-align: left;font-size: 17px;animation-name: FadeIn; animation-duration: 0.2s}
+#ButtonSetting8{position: relative;margin-top: 10px; margin-left: 10px;font-family: System_SubLime;width: 310px;height: 45px;text-align: left;font-size: 17px;animation-name: FadeIn; animation-duration: 0.2s}
+#ButtonSetting9{position: relative;margin-top: 10px; margin-left: 10px;font-family: System_SubLime;width: 310px;height: 45px;text-align: left;font-size: 17px;animation-name: FadeIn; animation-duration: 0.2s}
+#ButtonSetting10{position: relative;margin-top: 10px; margin-left: 10px;font-family: System_SubLime;width: 310px;height: 45px;text-align: left;font-size: 17px;animation-name: FadeIn; animation-duration: 0.2s}
+
+#SybSystemSetTB1{
+margin-left: 25px;
+font-size: 12px !important;
+color: rgb(176, 176, 176);
+margin-top: 0px;
+}
+
+#SybSystemSetTB{
+  margin-left: 30px;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+ 
+
+#persett12{
+  color:white;
+  font-family: System_Main;
+  font-size: 14px;
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+
+#BackSet{
+  float: right;
+  position: fixed;
+  top:0px;
+  right: 0px;
+  margin-top: 15px;
+  margin-right: 0px;
+  height: 17px;
+  width: 50px;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+
+  animation-name: FadeIn;
+  animation-duration: 0.2s;
+}

@@ -1,0 +1,692 @@
+body {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-family: System_Main;
+  background-image:url(System_Imagery/Other/NewWallpaper.png) ;
+  background-repeat:no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  margin: 0px;
+  user-select: none;
+  transition-duration: 0.5s;
+}
+
+#AppName{
+  font-size: 2px;
+}
+
+.Topbarstuff{
+  float: left;
+  margin-left: 20px;
+  font-size: 12px;
+  margin-top: 6px;
+  color: rgb(193, 193, 193);
+}
+
+#DesktopShape{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 255, 17, 0);
+  position: absolute;
+  display: none;
+}
+
+#TopBar{
+  width: 100%;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.671);
+  background-blend-mode: multiply;
+  backdrop-filter:blur(15px);
+  border-color: rgb(65, 65, 65);
+  border-style: solid;
+  border-width: 1px;
+  margin-top: -2px;
+  margin-left: -2px;
+  border-top: 1px;
+  align-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.521);
+  font-family: System_main;
+  display: none;
+
+  animation-name: HowardRises;
+  animation-duration: 0.2s;
+}
+
+.taskBarIcons{
+  background-color: rgb(0, 0, 0);
+  width: 30px;
+  height: 30px;
+  margin-left: 6px;
+  transition-duration: 0.1s;
+
+  border-color: rgb(43, 43, 43);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+
+  background-repeat:no-repeat;
+  background-size: cover;
+  float: left;
+  transition-duration: 0.2s;
+
+  animation-name: IconOpen;
+  animation-duration: .25s;
+
+  background-size: 80%;
+  background-position: center;
+  cursor: pointer;
+}
+
+#PowerOffImg{
+  width: 25px;
+  margin-top:3px;
+  float: right;
+  margin-right: 5px;
+  height: 23px;
+  cursor: pointer;
+}
+
+.taskBarIcons:hover{
+  border-color: rgb(112, 112, 112);
+  border-width: 1px;
+  border-style: solid;
+  background-color: rgb(70, 70, 70);
+}
+
+.taskBarIcons:active{
+  border-color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  background-color: rgb(148, 148, 148);
+}
+
+#Taskbar{
+  background-color: rgba(0, 0, 0, 0.467);
+  width: 100%;
+  height: 45px;
+  bottom: -3px;
+  left: -3px;
+  position: fixed;
+  background-blend-mode:multiply;
+  backdrop-filter:blur(15px);
+  border-top: 1px;
+  border-color: rgb(71, 71, 71);
+  border-style: solid;
+  box-shadow: 0 20px 10px 20px black;
+  align-content: center;
+  transition-duration: 0.2s;
+  display: none;
+  margin-bottom: -1px;
+
+  animation-name: TaskBarRise;
+  animation-duration: 0.2s;
+}
+
+#Howard_Chen{
+  animation-name: MusicKeepsMeDancing;
+  animation-duration: 1s;
+}
+
+#oobeback{
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
+
+  animation-duration: 0.2s;
+  animation-name: OOBEWindow;
+  display: none;
+}
+
+#OOBEContainer{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  background-color: rgba(0, 0, 0, 0.625);
+
+  border-color: gray;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.566);
+}
+
+
+.OOBETitle{
+  text-align: center;
+  margin-left: 0px;
+  margin-top: 70px;
+  font-size: 30px;
+  font-family: System_SubLime;
+}
+
+.OOBESubtitle{
+  text-align: center;
+  color: rgb(166, 166, 166);
+  font-family: Century Gothic;
+  font-size: 14px;
+}
+
+#BootBack{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+}
+
+
+#proceedoobe{
+  width: 150px;
+  height: 25px;
+  font-size: 16px;
+  font-family: Century Gothic;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, 550%);
+  
+  border-color: rgb(103, 103, 103);
+  border-width: 1px;
+  border-style: solid;
+}
+
+#backoobe{
+  width: 150px;
+  height: 25px;
+  font-size: 16px;
+  font-family: Century Gothic;
+  float: left;
+  margin-right: 0px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-110%, 550%);
+
+  border-color: rgba(0, 0, 0, 0) !important;
+  border-width: 1px;
+  border-style: solid;
+}
+
+#backoobe:hover{
+  background-color: rgb(0, 0, 0) !important;
+}
+
+.taskbrT{
+  height: 10px;
+  font-size: 11px;
+  margin-left: 5px;
+  position: absolute;
+  right: 15px;
+}
+
+#dateSys{
+  margin-top: 15px;
+}
+
+#O2309218090{
+  margin-left: 120px;
+  padding-top: 13px;
+  font-size: 25px;
+}
+
+#O2303258090{
+  margin-left: 120px;
+  padding-top: 10px;
+  font-size: 12px;
+  width: 200px;
+}
+
+#B1980218345{
+  margin-left: 120px;
+  float: left;
+  width: 90px;
+  margin-top: 40px;
+  height: 20px;
+}
+
+#B1980218346{
+  margin-left: 10px;
+  float: left;
+  width: 70px;
+  margin-top: 40px;
+  height: 20px;
+}
+
+.button:hover{
+  background-color: rgb(68, 68, 68);
+}
+
+.button:active{
+  background-color: rgb(109, 109, 109);
+}
+
+.button{
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 3px;
+  text-align: center;
+  align-content: center;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.411);
+  transition-duration: 0.1s;
+
+  border-radius: 5px;
+  border-color: rgb(54, 54, 54);
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+}
+
+#errorImg0{
+    position: fixed;
+    top: 50%;
+    transform: translate(0%, -50%);
+
+    width: 110px;
+    margin-left: 10px;
+    float: left;
+}
+
+
+#DesktopHighlight{
+  background-color: rgba(8, 70, 132, 0.433);
+  border-color: rgba(8, 70, 132, 1);
+  border-width: 1px;
+  border-radius: 0px;
+  border-style: solid;
+  display: none;
+  position: absolute;
+}
+
+#BootLogo{
+  width: 150px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+
+#BootGif{
+  width: 200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 90%);
+}
+
+.RightClickButton{
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 87%;
+  background-color: black;
+  padding-left: 10px;
+  font-size: 12px;
+  height: 25px;
+  align-content: center;
+  outline-width: 1px;
+
+  border-color: rgb(51, 51, 51);
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  transition-duration: 0.1s;
+}
+
+.RightClickButton:hover{
+  background-color:rgb(111, 111, 111);
+}
+
+#RightClickMenu1{
+  width: 170px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.782);
+  position: fixed;
+  border-radius: 5px;
+  border-color: rgb(74, 74, 74);
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.521);
+  backdrop-filter: blur(15px);
+  display: none;
+
+  animation-name: FadeIn;
+  animation-duration: 0.2s;
+}
+
+#QuickAccess{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: center;
+
+  width: 320px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.244);
+  right: 0px;
+  top: 29px;
+  position: fixed;
+
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left-color: rgb(74, 74, 74);
+  border-left-width: 1px;
+  border-left-style: solid; 
+  backdrop-filter: blur(15px);
+  box-shadow: 4px 0px 20px rgb(0, 0, 0);
+
+  animation-name: SlideInQA;
+  animation-duration: 0.2s;
+}
+
+.ArchTimeDate{
+  font-size: 12px;
+  margin-top: 0px;
+  right: 20px !important;
+}
+
+#MenuClic{
+  width: 33px;
+  height: 33px;
+  position: fixed;
+  padding: 2px;
+  top: 4px;
+  right: 4px;
+  background-image: url(System_Imagery/Iconography/menu.png);
+  background-size: cover;
+  border-radius: 5px;
+  transition-duration: 0.2s;
+}
+
+#MenuClic:hover{
+background-color: rgba(0, 0, 0, 0.679);
+}
+
+.QuickAccessPanels{
+  width: 260px;
+  height: 95px;
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.216);
+  padding: 5px;
+  padding-left: 15px;
+  border-radius: 5px;
+  border-color: rgb(74, 74, 74);
+  border-width: 1px;
+  border-style: solid;
+  transition-duration: 0.1s;
+  backdrop-filter: blur(15px);
+  margin-bottom: 5px;
+  margin-left: 20px;
+  box-shadow: 4px 4px 20px rgb(0, 0, 0);
+}
+
+.QuickAccessPanels:hover{
+  transform: scale(1.03);
+  background-color: rgba(0, 0, 0, 0.661)
+}
+
+#QD28375{ /* Inner */
+  width: 100px;
+  height: 15px;
+  background-color:rgb(43, 43, 43) ;
+  border-radius: 10px;
+}
+
+#QD28374{
+  width: 230px;
+  height: 15px;
+  border-radius: 10px;
+  position: fixed;
+  top:50px;  
+  background-color:rgb(0, 0, 0);
+  margin-left: 20px;
+  border-color: rgb(74, 74, 74);
+  border-width: 1px;
+  border-style: solid;
+
+  cursor: pointer;
+}
+
+#QD28376{
+  width: 230px;
+  height: 15px;
+  border-radius: 10px;
+  position: fixed;
+  top:80px;  
+  margin-left: 20px;
+  background-color:rgb(0, 0, 0);
+
+  border-color: rgb(74, 74, 74);
+  border-width: 1px;
+  border-style: solid;
+
+  cursor: pointer;
+}
+
+#QD28377{ /* Inner */
+  width: 150px;
+  height: 15px;
+  background-color:rgb(43, 43, 43) ;
+  border-radius: 10px;
+}
+
+#SubPane3{
+  width: 280px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.416);
+  margin-left: -15px;
+  margin-bottom: -5px;
+  border-radius: 5px;
+}
+
+#QA1937{
+  margin-top: 6%;
+  margin-left: 10px;
+}
+
+#QuickAccessPanel3{
+  height: 200px;
+  margin-bottom: 90px;
+}
+
+#s1937294{
+  width: 50px;
+  float: left;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+#QA1938{
+  color: rgb(216, 216, 216);
+}
+
+#QuickAccessPanel1{
+  height: 200px;
+}
+
+#s1937292{
+float: left; margin-left: -10px; margin-top: 7px; margin-right: 5px;
+}
+
+#Wallpaper1OP{
+  width: 130px;
+  height: 75px;
+  background-color: rgb(0, 0, 0);
+  margin-left: 13px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+  background-image: url(System_Imagery/Other/Wallpaper.png);
+  background-size: cover;
+  float: left;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.521);
+}
+
+.WallpaperSel{
+transition-duration: 0.2;
+transition: transform 0.3s ease;
+cursor: pointer;
+}
+
+.WallpaperSel:hover{
+transform: scale(1.05);
+}
+
+#Wallpaper11P{
+  width: 130px;
+  height: 75px;
+  background-color: rgb(0, 0, 0);
+  margin-left: 160px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+  background-image: url(System_Imagery/Other/RichMansCave.jpg);
+  background-size: cover;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.521);
+  float: left;
+}
+
+#Wallpaper12P{
+  width: 130px;
+  height: 75px;
+  background-color: rgb(0, 0, 0);
+  margin-left: 160px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+  background-image: url(System_Imagery/Other/wdaw.png);
+  background-size: cover;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.521);
+}
+
+/* Stuff that snuck out of designated folder */
+
+#IconSett{
+  background-image: url(System_Imagery/Iconography/Settings.png);
+  width: 55px;
+  height: 55px;
+  background-position: center;
+  background-size: contain;
+  float: left;
+  margin-left: 10px;
+}
+
+/* Bald Fices */
+
+@font-face { 
+    font-family:System_Light;
+    src: url(Fonts/Poppins);
+}
+
+@font-face { 
+    font-family:System_Main;
+    src: url(Fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family:System_Fat;
+    src: url(Fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family:System_SubLime;
+    src: url(Fonts/Poppins-Light.ttf);
+}
+
+@keyframes IconOpen {
+  from {
+    height: -0px;
+}}
+
+@keyframes WindowOpen {
+    from {
+      top: 51%;
+      opacity: 0;
+  }
+
+  to{
+    
+  }
+}
+
+@keyframes WindowOpen1 {
+    from {
+      top: 55%;
+      opacity: 0;
+  }
+
+  to{
+    
+  }
+}
+
+@keyframes HowardRises{
+    0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes OOBEWindow{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes FadeIn {
+    0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes SlideInQA {
+    0% {
+    right: -500px;
+    opacity: 0;
+  }
+  100% {
+
+  }
+}
+
+@keyframes SlideInQA1 {
+    0% {
+
+  }
+  100% {
+    right: -500px;
+    opacity: 0;
+  }
+}
+
+@keyframes MusicKeepsMeDancing {
+    0% {
+    opacity: 0;
+  }
+  100% {
+
+  }
+}

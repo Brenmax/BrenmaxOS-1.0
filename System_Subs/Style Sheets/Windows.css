@@ -1,0 +1,276 @@
+ /* animation-direction: reverse; */
+#Window0{
+  width: 500px;
+}
+
+#Window1{
+  width: 600px;
+}
+
+#Window2{
+  width: 200px;
+}
+
+#Window3{
+  width: 400px;
+}
+
+#Window4{
+  width: 700px;
+}
+
+/* Window Backs */
+
+.WindowBack{
+  background-color: rgba(0, 10, 10, 0.603);
+  backdrop-filter:blur(15px);
+  width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-top: -1px;
+  position: fixed;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.566);
+
+}
+
+#WindowBack0{
+  height:300px;
+}
+
+#WindowBack1{
+  height:200px;
+}
+
+#WindowBack2{
+  height:100px;
+}
+
+#WindowBack3{
+  height:200px;
+}
+
+#WindowBack4{
+  height:400px;
+}
+
+.closebut:hover{
+background-color: rgb(167, 46, 46);
+box-shadow: 4px 4px 10px rgba(200, 0, 0, 0.521);
+}
+
+.maxbut:hover{
+background-color: rgb(46, 167, 70);
+box-shadow: 4px 4px 10px rgba(0, 200, 30, 0.521);
+}
+
+.minbut:hover{
+background-color: rgb(167, 165, 46);
+box-shadow: 4px 4px 10px rgba(183, 200, 0, 0.521);
+}
+
+.closebut{
+  margin: 0px;
+  position: relative;
+  right: 0;
+  margin-right: 5px;
+  width: 15px;
+  height: 5px;
+  padding: 0px;
+  background-color: rgb(95, 27, 27);
+  align-content: center;
+  padding-top: 10px;
+  text-align: center;
+  border-radius: 2px;
+  font-size: x-large;
+  outline: 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(107, 107, 107);
+  transition-duration: 0.2s;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.521);
+  margin-top: 2px;
+  float: right;
+  margin-left: 0px;
+  cursor: pointer;
+}
+
+.maxbut{
+  float: right;
+  margin: 0px;
+  position: relative;
+  right: 0;
+  margin-right: 5px;
+  width: 15px;
+  height: 5px;
+  padding: 0px;
+  background-color: rgb(27, 95, 32);
+  align-content: center;
+  padding-top: 10px;
+  text-align: center;
+  border-radius: 2px;
+  font-size: x-large;
+  outline: 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(107, 107, 107);
+  transition-duration: 0.2s;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.521);
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.minbut{
+  float: right;
+  margin: 0px;
+  position: relative;
+  right: 0;
+  margin-right: 0px;
+  width:15px;
+  height: 5px;
+  padding: 0px;
+  background-color: rgb(89, 95, 27);
+  align-content: center;
+  padding-top: 10px;
+  text-align: center;
+  border-radius: 2px;
+  font-size: x-large;
+  outline: 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(107, 107, 107);
+  transition-duration: 0.2s;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.521);
+  margin-top: 2px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/* Customs Window Mains (Main) */
+
+.GUI{
+  background-color: rgba(0, 0, 0, 0.846);
+  backdrop-filter: blur(15px);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  height: 27px;
+  font-size: 15px;
+  align-content: center;
+  align-items: center;
+  padding-left: 10px;
+  font-family: System_Main;
+
+  border-bottom-width: 1px;
+  border-bottom-style: none;  
+  position: relative;
+  margin-bottom: -0px;
+}
+
+.Windows{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -700%);
+  display: none;
+
+  border-color: rgb(33, 33, 33);
+  border-width: 1px;
+  border-style: none;
+  border-top-style: none;   
+  border-radius: 6px;
+  border-top-left-radius: 6px;
+  
+  animation-name: WindowOpen;
+  animation-duration: .15s;
+}
+
+/* Bald Fices */
+
+@font-face { 
+    font-family:System_Light;
+    src: url(Fonts/Poppins);
+}
+
+@font-face { 
+    font-family:System_Main;
+    src: url(Fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family:System_Fat;
+    src: url(Fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family:System_SubLime;
+    src: url(Fonts/Poppins-Light.ttf);
+}
+
+@keyframes IconOpen {
+  from {
+    height: -0px;
+}}
+
+@keyframes WindowOpen {
+    from {
+      top: 51%;
+      opacity: 0;
+  }
+
+  to{
+    
+  }
+}
+
+@keyframes WindowOpen1 {
+    from {
+      top: 55%;
+      opacity: 0;
+  }
+
+  to{
+    
+  }
+}
+
+@keyframes TaskBarRise {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes HowardRises{
+    0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes OOBEWindow{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes FadeIn {
+    0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
