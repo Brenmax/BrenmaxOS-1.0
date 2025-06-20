@@ -1,0 +1,9 @@
+Generic Notification API
+
+    document.getElementById("AllABTR").style.animationName = "SlideInQA"
+    document.getElementById("AllABTR").style.display = "block";
+    document.getElementById("NotifTitle").innerHTML = "Welcome!";
+    document.getElementById("NotifDesc").innerHTML = "Welcome to the BrenmaxOS Operating System.";
+    document.getElementById("AllABTR").addEventListener('mouseup', CloseNotification)
+    document.getElementById("NotifImg").style.backgroundImage = "url(System_Imagery/Iconography/Welcome.png)";
+    setTimeout(CloseNotification, 2000);

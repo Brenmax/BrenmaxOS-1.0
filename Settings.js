@@ -62,8 +62,7 @@ document.getElementById("ButtonSetting6").addEventListener("mouseup", () => {
 function SettingPages_Clear(){
     document.getElementById("Page1Set").style.display = "none"
     document.getElementById("Page2Set").style.display = "none"
-    document.getElementById("Page3Set").
-    style.display = "none"
+    document.getElementById("Page3Set").style.display = "none"
     document.getElementById("Page4Set").style.display = "none"
     document.getElementById("Page5Set").style.display = "none"
     document.getElementById("BackSet").style.display = "none"

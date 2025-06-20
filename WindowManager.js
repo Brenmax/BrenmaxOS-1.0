@@ -8,7 +8,6 @@ let FrontManager = 1000000
 //---------------------------------------------------------------------
 
 document.getElementById("Window0").addEventListener('mouseup', BringToFront0)
-
 document.getElementById("WinGUI0").addEventListener("mousedown", e => {
     Window = document.getElementById("Window0")
     BringToFront0()
@@ -130,8 +129,7 @@ function OpenWindow3(){
     Window = document.getElementById("Window3")
     Window.style.display = "block"
     BringToFront3()
-    console.log("BLING💍")
-}
+    console.log("BLING💍")}
 
 document.getElementById("Close3").addEventListener('mouseup', CloseWindow3)
 
@@ -165,6 +163,15 @@ function OpenWindow4(){
     Window.style.display = "block"
     BringToFront4()
     console.log("BLING💍")
+    CloseWindow0();
+
+    document.getElementById("AllABTR").style.animationName = "SlideInQA"
+    document.getElementById("AllABTR").style.display = "block";
+    document.getElementById("NotifTitle").innerHTML = "Some Options Not Implemented";
+    document.getElementById("NotifDesc").innerHTML = "Some options in this app are not done yet!";
+    document.getElementById("AllABTR").addEventListener('mouseup', CloseNotification)
+    document.getElementById("NotifImg").style.backgroundImage = "url(System_Imagery/Other/Err0r.png)";
+    setTimeout(CloseNotification, 5000);
 }
 
 document.getElementById("Close4").addEventListener('mouseup', CloseWindow4)
@@ -196,39 +203,13 @@ function WindowClear(){
     CloseWindow1
     CloseWindow2
     CloseWindow3
+    CloseWindow4
 }
-document.addEventListener("mouseup", () => isDragging = false);
-
-    let div = document.createElement("div");
-    div.className = "taskBarIcons";
-    div.style.backgroundImage = "url(System_Imagery/Iconography/Welcome.png)"
-    div.addEventListener("mouseup", OpenWindow0)
-    document.getElementById("Taskbar").appendChild(div);
-
-    div = document.createElement("div");
-    div.className = "taskBarIcons";
-    div.style.backgroundImage = "url(System_Imagery/Iconography/Moosic.png)"
-    div.addEventListener("mouseup", OpenWindow1)
-    document.getElementById("Taskbar").appendChild(div);
+    document.addEventListener("mouseup", () => isDragging = false);
 
     div = document.createElement("div");
     div.className = "taskBarIcons";
     div.id = "Hello!";
-    div.style.backgroundImage = "url(System_Imagery/Iconography/Alm.png)"
-    div.addEventListener("mouseup", OpenWindow2)
+    div.style.backgroundImage = "url(System_Imagery/Other/Settings.png)";
+    div.addEventListener("mouseup", OpenWindow4);
     document.getElementById("Taskbar").appendChild(div);
-
-    div = document.createElement("div");
-    div.className = "taskBarIcons";
-    div.id = "Hello!";
-    div.style.backgroundImage = "url(System_Imagery/Other/Settings.png)"
-    div.addEventListener("mouseup", OpenWindow4)
-    document.getElementById("Taskbar").appendChild(div);
-
-    div = document.createElement("div");
-    div.className = "taskBarIcons";
-    div.style.backgroundImage = "url(System_Imagery/Iconography/Account.png)"
-    div.addEventListener("mouseup ", OpenWindow3)
-    div.id = "PornTask"
-    document.getElementById("Taskbar").appendChild(div);
-    document.getElementById("PornTask").addEventListener("mouseup",OpenWindow3)

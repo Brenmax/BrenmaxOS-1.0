@@ -31,7 +31,7 @@ function System_Boot (){
     if (getCookie("FirstTime") != null){
         setTimeout(() => {
             DesktopStart()
-        }, 1000);
+        }, 1);
     }
 
     if (getCookie("FirstTime") == null){
@@ -39,7 +39,7 @@ function System_Boot (){
                 document.getElementById("BootBack").style.display = "none";
                 OOBE_Start()
                 return;
-            }, 1000);
+            }, 5000);
     }
 
 }
@@ -48,6 +48,9 @@ document.getElementById("B1980218345").addEventListener("mouseup", System_Shutdo
 document.getElementById("B1980218346").addEventListener("mouseup", CloseWindow3)
 document.getElementById("PowerOffImg").addEventListener("mouseup", OpenWindow3)
 document.getElementById("proceedoobe").addEventListener("mouseup", OOBE_Finnished)
+
+document.getElementById("Oobebut1").addEventListener("mouseup", OpenWindow4)
+document.getElementById("Oobebut2").addEventListener("mouseup", CloseWindow0)
 
 function System_Shutdown(){
     clearCookies()
@@ -60,9 +63,30 @@ function OOBE_Start(){
 
 function OOBE_Finnished(){
     document.getElementById("OOBEContainer").style.display = "none";
+    document.getElementById("AllABTR").style.display = "block";
     document.cookie = "FirstTime=true; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/";
     DesktopStart()
+    OpenWindow0()
+
+        document.getElementById("AllABTR").style.animationName = "SlideInQA"
+        document.getElementById("AllABTR").style.display = "block";
+        document.getElementById("NotifTitle").innerHTML = "Welcome!";
+        document.getElementById("NotifDesc").innerHTML = "Welcome to the BrenmaxOS Operating System.";
+        document.getElementById("AllABTR").addEventListener('mouseup', CloseNotification)
+        document.getElementById("NotifTitle").innerHTML = "Welcome!";
+        document.getElementById("NotifImg").style.backgroundImage = "url(System_Imagery/Iconography/Welcome.png)";
+        setTimeout(CloseNotification, 5000);
 }
+
+function CloseNotification() {
+    document.getElementById("AllABTR").style.display = "none";
+
+    document.getElementById("AllABTR").style.display = "none"
+    document.getElementById("AllABTR").style.animationName = "SlideInQA1"
+    document.getElementById("AllABTR").style.display = "block"
+        setTimeout(() => {
+            document.getElementById("AllABTR").style.display = "none"
+        }, 150);}
 
 //----------------===================== { Highlight Effect } ===================---------------
 
