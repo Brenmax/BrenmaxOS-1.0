@@ -157,7 +157,7 @@ box-shadow: 4px 4px 10px rgba(183, 200, 0, 0.521);
   align-content: center;
   align-items: center;
   padding-left: 10px;
-  font-family: System_Main;
+  font-family: System_SubLime;
 
   border-bottom-width: 1px;
   border-bottom-style: none;  
@@ -169,10 +169,10 @@ box-shadow: 4px 4px 10px rgba(183, 200, 0, 0.521);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   margin: 0px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -700%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -700%);
   display: none;
 
   border-color: rgb(33, 33, 33);
@@ -183,7 +183,7 @@ box-shadow: 4px 4px 10px rgba(183, 200, 0, 0.521);
   border-top-left-radius: 6px;
   
   animation-name: WindowOpen;
-  animation-duration: .15s;
+  animation-duration: .2s;
 }
 
 /* Bald Fices */
@@ -215,7 +215,7 @@ box-shadow: 4px 4px 10px rgba(183, 200, 0, 0.521);
 
 @keyframes WindowOpen {
     from {
-      top: 51%;
+      top: 55%;
       opacity: 0;
   }
 

@@ -31,7 +31,7 @@ function System_Boot (){
     if (getCookie("FirstTime") != null){
         setTimeout(() => {
             DesktopStart()
-        }, 1);
+        }, 1000);
     }
 
     if (getCookie("FirstTime") == null){
@@ -39,7 +39,7 @@ function System_Boot (){
                 document.getElementById("BootBack").style.display = "none";
                 OOBE_Start()
                 return;
-            }, 5000);
+            }, 1000);
     }
 
 }
@@ -47,18 +47,107 @@ function System_Boot (){
 document.getElementById("B1980218345").addEventListener("mouseup", System_Shutdown)
 document.getElementById("B1980218346").addEventListener("mouseup", CloseWindow3)
 document.getElementById("PowerOffImg").addEventListener("mouseup", OpenWindow3)
-document.getElementById("proceedoobe").addEventListener("mouseup", OOBE_Finnished)
+document.getElementById("backoobe").addEventListener("mouseup", OOBE_Next)
+document.getElementById("proceedoobe").addEventListener("mouseup", OOBE_Back)
 
 document.getElementById("Oobebut1").addEventListener("mouseup", OpenWindow4)
 document.getElementById("Oobebut2").addEventListener("mouseup", CloseWindow0)
 
+document.getElementById("oobewallp1").addEventListener("mouseup", Wallpaper1)
+document.getElementById("oobewallp2").addEventListener("mouseup", Wallpaper3)
+
+function Wallpaper1(){
+document.body.style.backgroundImage = "url(System_Imagery/Other/RoundWallpaper.png)"
+document.cookie = "Wallpaper=1; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/";
+}
+
+function Wallpaper2(){
+document.body.style.backgroundImage = "url(System_Imagery/Other/RichMansCave.jpg)"
+document.cookie = "Wallpaper=2; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/";
+}
+
+function Wallpaper3(){
+document.body.style.backgroundImage = "url(System_Imagery/Other/NewWallpaper.png)"
+document.cookie = "Wallpaper=3; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/";
+}
+
+let OOBEPage = 1;
+
+function OOBE_Next() {
+    let Howard = document.getElementById("OOBEUserForm1").value
+    document.cookie = "UserName=" + Howard;
+
+    if(OOBEPage == 1){
+        OOBE_ClearPages()
+        document.getElementById("Page2OOBE").style.display = "block";
+        OOBEPage ++
+    }else if(OOBEPage == 2){
+        OOBE_ClearPages()
+        document.getElementById("Page3OOBE").style.display = "block";
+        OOBEPage ++
+        
+    }else if(OOBEPage == 3){
+        if(document.getElementById("OOBEUserForm1").value != "" && document.getElementById("OOBEUserForm2").value != ""){
+        OOBE_ClearPages()
+        document.getElementById("Page4OOBE").style.display = "block";
+        OOBEPage ++
+        }else{
+            window.alert ("Enter a valid value")
+        }
+    }else{
+        OOBE_Finnished()
+    }
+}
+
+function OOBE_ClearPages() {
+    document.getElementById("Page1OOBE").style.display = "none";
+    document.getElementById("Page2OOBE").style.display = "none";
+    document.getElementById("Page3OOBE").style.display = "none";
+    document.getElementById("Page4OOBE").style.display = "none";
+
+}
+
+function OOBE_Back() {
+console.log(OOBEPage)
+    if(OOBEPage == 2){
+        OOBE_ClearPages()
+        document.getElementById("Page1OOBE").style.display = "block";
+        OOBEPage = 1
+    }else if(OOBEPage == 3){
+        OOBE_ClearPages()
+        document.getElementById("Page2OOBE").style.display = "block";
+        OOBEPage = 2
+    }else if(OOBEPage == 4){
+        OOBE_ClearPages()
+        document.getElementById("Page3OOBE").style.display = "block";
+        OOBEPage = 3
+    }
+}
+
 function System_Shutdown(){
-    clearCookies()
-    window.close()
+    DesktopHide()
+    document.getElementById("Window0").style.display = "none";
+    document.getElementById("Window1").style.display = "none";
+    document.getElementById("Window2").style.display = "none";
+    document.getElementById("Window3").style.display = "none";
+    document.getElementById("Window4").style.display = "none";
+
+    document.getElementById("ShutdownUI").style.display = "block";
+    setTimeout(() => {
+         window.close()
+         document.getElementById("Shutdown").innerHTML = ("Couldn't Shutdown!")
+         document.getElementById("SDI").style.display = "none"
+    }, 3000);
 }
 
 function OOBE_Start(){
+    const bgMusic = document.getElementById('bgMusic');
+    bgMusic.play()
+    bgMusic.volume = 0.5;
+
     document.getElementById("oobeback").style.display = "block";
+    document.getElementById("Page1OOBE").style.display = "block";
+    document.getElementById("Page2OOBE").style.display = "none";
 }
 
 function OOBE_Finnished(){
@@ -76,6 +165,9 @@ function OOBE_Finnished(){
         document.getElementById("NotifTitle").innerHTML = "Welcome!";
         document.getElementById("NotifImg").style.backgroundImage = "url(System_Imagery/Iconography/Welcome.png)";
         setTimeout(CloseNotification, 5000);
+
+    const bgMusic = document.getElementById('bgMusic');
+    bgMusic.pause();
 }
 
 function CloseNotification() {
@@ -185,10 +277,19 @@ document.addEventListener("mousedown",() => {
         document.getElementById("DesktopShape").style.display = "block";
     }
 
+    function DesktopHide(){
+        document.getElementById("BootBack").style.display = "none";
+        document.getElementById("TopBar").style.display = "none";
+        document.getElementById("Taskbar").style.display = "none";
+        document.getElementById("DesktopShape").style.display = "none";
+    }
+
     document.getElementById("RC-2817").addEventListener("mousedown", () => {
         Window = document.getElementById("Window3")
         Window.style.display = "block"
         BringToFront3()
         console.log("BLING💍")
     })
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------
 
