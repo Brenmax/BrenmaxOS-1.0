@@ -129,6 +129,8 @@ function ResetSystem() {
         return;
     }
 
+    document.getElementById("AllABTR").style.display = "none"
+
     document.getElementById("ShutdownUI").style.display = "block";
         setTimeout(() => {
          window.location.reload();

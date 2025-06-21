@@ -2,8 +2,6 @@ let DragInProg = false;
 let DragX = 0;
 let DragY = 0;
 
-document.addEventListener("mousedown", () => {document.documentElement.requestFullscreen();})
-
 function getCookie(name) {
     const cookies = document.cookie.split("; ");
     for (let cookie of cookies) {
@@ -30,7 +28,13 @@ function System_Boot (){
 
     if (getCookie("FirstTime") != null){
         setTimeout(() => {
-            DesktopStart()
+            if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                document.getElementById("BootFail").style.display = "block"
+                document.getElementById("BootBack").style.display = "none"
+                document.body.style.backgroundImage = "none"
+            }else{
+                DesktopStart()
+            }
         }, 1000);
     }
 
@@ -132,6 +136,8 @@ function System_Shutdown(){
     document.getElementById("Window3").style.display = "none";
     document.getElementById("Window4").style.display = "none";
 
+    document.getElementById("AllABTR").style.display = "none"
+
     
     if(MenuOpen){
         document.getElementById("QuickAccess").style.display = "none"
@@ -154,8 +160,6 @@ function System_Shutdown(){
 
 function OOBE_Start(){
     const bgMusic = document.getElementById('bgMusic');
-    bgMusic.play()
-    bgMusic.volume = 0.5;
 
     document.getElementById("oobeback").style.display = "block";
     document.getElementById("Page1OOBE").style.display = "block";
@@ -178,11 +182,10 @@ function OOBE_Finnished(){
         document.getElementById("NotifImg").style.backgroundImage = "url(System_Imagery/Iconography/Welcome.png)";
         setTimeout(CloseNotification, 5000);
 
-    const bgMusic = document.getElementById('bgMusic');
-    bgMusic.pause();
 }
 
-function CloseNotification() {
+function CloseNotification(){
+    if(document.getElementById("AllABTR").style.display != "none"){
     document.getElementById("AllABTR").style.display = "none";
 
     document.getElementById("AllABTR").style.display = "none"
@@ -190,7 +193,9 @@ function CloseNotification() {
     document.getElementById("AllABTR").style.display = "block"
         setTimeout(() => {
             document.getElementById("AllABTR").style.display = "none"
-        }, 150);}
+        }, 150);
+    }
+}
 
 //----------------===================== { Highlight Effect } ===================---------------
 
