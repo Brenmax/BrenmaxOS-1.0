@@ -132,6 +132,18 @@ function System_Shutdown(){
     document.getElementById("Window3").style.display = "none";
     document.getElementById("Window4").style.display = "none";
 
+    
+    if(MenuOpen){
+        document.getElementById("QuickAccess").style.display = "none"
+        document.getElementById("QuickAccess").style.animationName = "SlideInQA1"
+        document.getElementById("QuickAccess").style.display = "flex"
+            setTimeout(() => {
+                document.getElementById("QuickAccess").style.display = "none"
+            }, 150);
+        MenuOpen = false
+        return;
+    }
+
     document.getElementById("ShutdownUI").style.display = "block";
     setTimeout(() => {
          window.close()
