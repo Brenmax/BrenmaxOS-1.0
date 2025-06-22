@@ -59,22 +59,34 @@ document.getElementById("ButtonSetting6").addEventListener("mouseup", () => {
 })
 
 //----------------------------------------------------------------
+
+function Settings_Page6(){
+    SettingPages_Clear()
+    document.getElementById("Page6Set").style.display = "block"
+    document.getElementById("BackSet").style.display = "block"
+}
+
+document.getElementById("ButtonSetting9").addEventListener("mouseup", () => {
+    Settings_Page6()
+})
+
+//----------------------------------------------------------------
 function SettingPages_Clear(){
     document.getElementById("Page1Set").style.display = "none"
     document.getElementById("Page2Set").style.display = "none"
     document.getElementById("Page3Set").style.display = "none"
     document.getElementById("Page4Set").style.display = "none"
     document.getElementById("Page5Set").style.display = "none"
+    document.getElementById("Page6Set").style.display = "none"
     document.getElementById("BackSet").style.display = "none"
 }
 
 document.getElementById("ButtonSetting3").addEventListener("mouseup", () => {Settings_Page4()})
 document.getElementById("ButtonSetting4").addEventListener("mouseup", () => {Settings_Page4()})
 document.getElementById("ButtonSetting5").addEventListener("mouseup", () => {Settings_Page4()})
-// document.getElementById("ButtonSetting6").addEventListener("mouseup", () => {Settings_Page4()})
 document.getElementById("ButtonSetting7").addEventListener("mouseup", () => {Settings_Page4()})
 document.getElementById("ButtonSetting8").addEventListener("mouseup", () => {Settings_Page4()})
-document.getElementById("ButtonSetting9").addEventListener("mouseup", () => {Settings_Page4()})
+document.getElementById("ButtonSetting9").addEventListener("mouseup", () => {Settings_Page6()}) //Users Tab
 document.getElementById("ButtonSetting10").addEventListener("mouseup", () => {Settings_Page4()})
 
 //----------------------------------------------------------------

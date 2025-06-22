@@ -2,6 +2,9 @@ let DragInProg = false;
 let DragX = 0;
 let DragY = 0;
 
+//----------------===================== { System Cookies } ===================---------------
+
+
 function getCookie(name) {
     const cookies = document.cookie.split("; ");
     for (let cookie of cookies) {
@@ -10,7 +13,7 @@ function getCookie(name) {
             return value;
         }
     }
-    return null; // Return null if the cookie isn't found
+    return null;
 }
 
 function clearCookies() {
@@ -21,7 +24,6 @@ function clearCookies() {
     });
 }
 
-console.log(getCookie("FirstTime") + ", Bald Fice"); 
 System_Boot()
 
 function System_Boot (){
@@ -33,7 +35,8 @@ function System_Boot (){
                 document.getElementById("BootBack").style.display = "none"
                 document.body.style.backgroundImage = "none"
             }else{
-                DesktopStart()
+                Logoff()
+                DesktopHide()
             }
         }, 1000);
     }
@@ -48,9 +51,76 @@ function System_Boot (){
 
 }
 
+//----------------===================== { System Shutoff } ===================---------------
+
+
+function System_Shutdown(){
+    DesktopHide()
+    document.getElementById("Window0").style.display = "none";
+    document.getElementById("Window1").style.display = "none";
+    document.getElementById("Window2").style.display = "none";
+    document.getElementById("Window3").style.display = "none";
+    document.getElementById("Window4").style.display = "none";
+
+    document.getElementById("AllABTR").style.display = "none"
+
+    
+    if(MenuOpen){
+        document.getElementById("QuickAccess").style.display = "none"
+        document.getElementById("QuickAccess").style.animationName = "SlideInQA1"
+        document.getElementById("QuickAccess").style.display = "flex"
+            setTimeout(() => {
+                document.getElementById("QuickAccess").style.display = "none"
+            }, 150);
+        MenuOpen = false
+        return;
+    }
+
+    document.getElementById("ShutdownUI").style.display = "block";
+    setTimeout(() => {
+         window.close()
+         document.getElementById("Shutdown").innerHTML = ("Couldn't Shutdown!")
+         document.getElementById("SDI").style.display = "none"
+    }, 3000);
+}
+
+//----------------===================== { OOBE } ===================---------------
+
+
+function OOBE_Start(){
+    const bgMusic = document.getElementById('bgMusic');
+
+    document.getElementById("oobeback").style.display = "block";
+    document.getElementById("Page1OOBE").style.display = "block";
+    document.getElementById("Page2OOBE").style.display = "none";
+}
+
+function OOBE_Finnished(){
+    document.getElementById("OOBEContainer").style.display = "none";
+    document.getElementById("AllABTR").style.display = "block";
+    document.cookie = "FirstTime=true; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/";
+    DesktopStart()
+    OpenWindow0()
+
+        document.getElementById("AllABTR").style.animationName = "SlideInQA"
+        document.getElementById("AllABTR").style.display = "block";
+        document.getElementById("NotifTitle").innerHTML = "Welcome!";
+        document.getElementById("NotifDesc").innerHTML = "Welcome to the BrenmaxOS Operating System.";
+        document.getElementById("AllABTR").addEventListener('mouseup', CloseNotification)
+        document.getElementById("NotifTitle").innerHTML = "Welcome!";
+        document.getElementById("NotifImg").style.backgroundImage = "url(System_Imagery/Iconography/Welcome.png)";
+        setTimeout(CloseNotification, 5000);
+
+        document.cookie = "Username=" + document.getElementById("OOBEUserForm1").value;
+        document.cookie = "Password=" + document.getElementById("OOBEUserForm2").value;
+
+
+}
+
 document.getElementById("B1980218345").addEventListener("mouseup", System_Shutdown)
 document.getElementById("B1980218346").addEventListener("mouseup", CloseWindow3)
 document.getElementById("PowerOffImg").addEventListener("mouseup", OpenWindow3)
+document.getElementById("LogOffImg").addEventListener("mouseup", Logoff)
 document.getElementById("backoobe").addEventListener("mouseup", OOBE_Next)
 document.getElementById("proceedoobe").addEventListener("mouseup", OOBE_Back)
 
@@ -112,7 +182,6 @@ function OOBE_ClearPages() {
 }
 
 function OOBE_Back() {
-console.log(OOBEPage)
     if(OOBEPage == 2){
         OOBE_ClearPages()
         document.getElementById("Page1OOBE").style.display = "block";
@@ -128,61 +197,8 @@ console.log(OOBEPage)
     }
 }
 
-function System_Shutdown(){
-    DesktopHide()
-    document.getElementById("Window0").style.display = "none";
-    document.getElementById("Window1").style.display = "none";
-    document.getElementById("Window2").style.display = "none";
-    document.getElementById("Window3").style.display = "none";
-    document.getElementById("Window4").style.display = "none";
+//----------------===================== { Notificationo Effect } ===================---------------
 
-    document.getElementById("AllABTR").style.display = "none"
-
-    
-    if(MenuOpen){
-        document.getElementById("QuickAccess").style.display = "none"
-        document.getElementById("QuickAccess").style.animationName = "SlideInQA1"
-        document.getElementById("QuickAccess").style.display = "flex"
-            setTimeout(() => {
-                document.getElementById("QuickAccess").style.display = "none"
-            }, 150);
-        MenuOpen = false
-        return;
-    }
-
-    document.getElementById("ShutdownUI").style.display = "block";
-    setTimeout(() => {
-         window.close()
-         document.getElementById("Shutdown").innerHTML = ("Couldn't Shutdown!")
-         document.getElementById("SDI").style.display = "none"
-    }, 3000);
-}
-
-function OOBE_Start(){
-    const bgMusic = document.getElementById('bgMusic');
-
-    document.getElementById("oobeback").style.display = "block";
-    document.getElementById("Page1OOBE").style.display = "block";
-    document.getElementById("Page2OOBE").style.display = "none";
-}
-
-function OOBE_Finnished(){
-    document.getElementById("OOBEContainer").style.display = "none";
-    document.getElementById("AllABTR").style.display = "block";
-    document.cookie = "FirstTime=true; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/";
-    DesktopStart()
-    OpenWindow0()
-
-        document.getElementById("AllABTR").style.animationName = "SlideInQA"
-        document.getElementById("AllABTR").style.display = "block";
-        document.getElementById("NotifTitle").innerHTML = "Welcome!";
-        document.getElementById("NotifDesc").innerHTML = "Welcome to the BrenmaxOS Operating System.";
-        document.getElementById("AllABTR").addEventListener('mouseup', CloseNotification)
-        document.getElementById("NotifTitle").innerHTML = "Welcome!";
-        document.getElementById("NotifImg").style.backgroundImage = "url(System_Imagery/Iconography/Welcome.png)";
-        setTimeout(CloseNotification, 5000);
-
-}
 
 function CloseNotification(){
     if(document.getElementById("AllABTR").style.display != "none"){
@@ -197,7 +213,7 @@ function CloseNotification(){
     }
 }
 
-//----------------===================== { Highlight Effect } ===================---------------
+//----------------===================== { Desktop Manager } ===================---------------
 
 let highlight = document.getElementById("DesktopHighlight");
 
@@ -233,7 +249,6 @@ document.addEventListener("mousemove", (e) => {
 
 document.getElementById("DesktopShape").addEventListener("contextmenu", (event) => {
     event.preventDefault(); 
-    console.log("Right-click detected at:", event.clientX, event.clientY);
     document.getElementById("RightClickMenu1").style.left = event.clientX + "px"
     document.getElementById("RightClickMenu1").style.top = event.clientY + "px"
     document.getElementById("RightClickMenu1").style.display = "block"
@@ -243,6 +258,8 @@ document.addEventListener("contextmenu", (event) => {event.preventDefault();});
 document.addEventListener("mousedown",() => {
     document.getElementById("RightClickMenu1").style.display = "none"
 } )
+
+//----------------===================== { Update Taskbar } ===================---------------
 
   function updateTime() {
     const now = new Date();
@@ -270,6 +287,9 @@ document.addEventListener("mousedown",() => {
   document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("dateSys").innerHTML = formatDate(nows);
   });
+
+  //----------------===================== { Taskbar/Desktop API } ===================---------------
+
 
     function System_TaskbarUp(){
         document.getElementById("Taskbar").style.display = "block";
@@ -305,8 +325,76 @@ document.addEventListener("mousedown",() => {
         Window = document.getElementById("Window3")
         Window.style.display = "block"
         BringToFront3()
-        console.log("BLING💍")
     })
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------===================== { Login System } ===================---------------
+
+
+function Logoff() {
+    DesktopHide()
+    document.getElementById("LoginPage").style.display = "block";
+    document.getElementById("Username").innerHTML = getCookie("Username")
+}
+
+function Login() {
+    if (document.getElementById("Breathe").value !=  getCookie("Password")){
+        window.alert("Couldn't Log In")
+    }else{
+        document.getElementById("LoginPage").style.display = "none";
+        DesktopStart()
+    }
+}
+
+document.addEventListener("keydown", (e) => {
+    if(e.key == "Enter"){
+        Login()
+    }
+})
+
+
+document.getElementById("UN").addEventListener("mouseup", () => {
+    document.getElementById("oobeback").style.display = "block";
+    document.getElementById("oobeback").style.zIndex = "3000000";
+    OOBE_ClearPages()
+    document.getElementById("Page3OOBE").style.display = "block";
+    document.getElementById("proceedoobe").innerHTML = "Cancel"
+    document.getElementById("backoobe").innerHTML = "Save"
+    document.getElementById("Window4").style.display = "none";
+
+    document.getElementById("proceedoobe").addEventListener('mouseup', () => {
+        document.getElementById("oobeback").style.display = "none";
+        document.getElementById("Window4").style.display = "block";
+    })
+
+    document.getElementById("backoobe").addEventListener('mouseup', () => {
+        document.getElementById("Window4").style.display = "block";
+        document.cookie = "Username=" + document.getElementById("OOBEUserForm1").value;
+        document.cookie = "Password=" + document.getElementById("OOBEUserForm2").value;
+        document.getElementById("oobeback").style.display = "none";
+    })
+})
+
+document.getElementById("EP").addEventListener("mouseup", () => {
+    document.getElementById("oobeback").style.display = "block";
+    document.getElementById("oobeback").style.zIndex = "3000000";
+    OOBE_ClearPages()
+    document.getElementById("Page3OOBE").style.display = "block";
+    document.getElementById("Window4").style.display = "none";
+    document.getElementById("proceedoobe").innerHTML = "Cancel"
+    document.getElementById("backoobe").innerHTML = "Save"
+
+    document.getElementById("proceedoobe").addEventListener('mouseup', () => {
+        document.getElementById("oobeback").style.display = "none";
+        document.getElementById("Window4").style.display = "block";
+    })
+
+    document.getElementById("backoobe").addEventListener('mouseup', () => {
+        document.getElementById("Window4").style.display = "block";
+        document.cookie = "Username=" + document.getElementById("OOBEUserForm1").value;
+        document.cookie = "Password=" + document.getElementById("OOBEUserForm2").value;
+        document.getElementById("oobeback").style.display = "none";
+    })
+    
+})
+
 

@@ -16,15 +16,22 @@
     <div id="BootBack">
         <div id="Howard_Chen">
         <img src="System_Imagery/Other/WhiteLogo.png" alt="BootLogo" id="BootLogo">
-        <svg viewBox="0 0 16 16" height="48" width="48" class="windows-loading-spinner">
-        <circle r="7px" cy="8px" cx="8px"></circle>
-        </svg>
+            <svg viewBox="0 0 16 16" height="48" width="48" class="windows-loading-spinner" id="BootGif">
+                <circle r="7px" cy="8px" cx="8px"></circle>
+            </svg>
         </div>
     </div>
 
     <div id="BootFail">
         <div>Cannot boot!</div>
         <div style="font-size: 12px; font-family: System_SubLime;">Brenmax failed starting as your are on a non-supported device.</div>
+    </div>
+
+    <div id="LoginPage">
+        <div id="PFP"></div>
+        <div id="Username">Brenmax Corporation</div>
+        <div id="Username1">System Administrator</div>
+        <input type="password" class="textInput" placeholder="Enter Passowrd" autocomplete="off" id="Breathe">
     </div>
 
     <div id="ShutdownUI">
@@ -99,6 +106,7 @@
         <div class="Topbarstuff">File</div>
         <div class="Topbarstuff">Lorem Ipsum</div>
         <img src="System_Imagery/Iconography/PowerO.png" alt="Off" id="PowerOffImg">
+        <img src="System_Imagery/Iconography/Key.png" alt="Off" id="LogOffImg">
     </div>
 
     <div id="oobeback">
@@ -277,7 +285,7 @@
                                 <div class="SubSet1">Change how your OS looks and feels</div>
                             </div>
                             <div class="button" id="ButtonSetting9">
-                                    <div class="SubSet2">Accountrs & Users</div>
+                                    <div class="SubSet2">Accounts & Users</div>
                                 <div class="SubSet1">Change how your OS looks and feels</div>
                             </div>
                             <div class="button" id="ButtonSetting10">
@@ -337,6 +345,16 @@
                         <div id="persett2">Delete Everything and resetOS</div>
                         <div style="margin-left: 10px;margin-top: 10px; font-family: System_SubLime; width: 200px; font-size: 10px;">This will reset brenmax. Brenmax will restart and all system information will not be saved</div>
                         <div class="button" id="button2736">Reset Now</div>
+                    </div>
+                            <!-- Accounts Tab -->
+                    <div style="display: none; margin-left: 10px; margin-top: 5px;" id="Page6Set">
+                        <div id="persett1">Change Username</div>
+                        <div id="persett2" style="font-size: 12px;">Change your username</div>
+                        <div class="button" style="width: 150px; margin-top: 10px; margin-left: 5px;" id="UN">Edit Username</div>
+
+                        <div id="persett1" style="margin-top: 20px;">Change Password</div>
+                        <div id="persett2" style="font-size: 12px;">Change your Password</div>
+                        <div class="button" style="width: 150px; margin-top: 10px; margin-left: 5px;" id="EP">Edit Password</div>
                     </div>
     </div>
     </div>

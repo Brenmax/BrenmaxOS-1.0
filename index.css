@@ -79,6 +79,15 @@ body {
 }
 
 #PowerOffImg{
+  width: 24px;
+  margin-top:3px;
+  float: right;
+  margin-right: 5px;
+  height: 23px;
+  cursor: pointer;
+}
+
+#LogOffImg{
   width: 25px;
   margin-top:3px;
   float: right;
@@ -313,6 +322,32 @@ body {
   font-family: System_SubLime;
 }
 
+#PasswordInput{
+    position: fixed;
+margin-top: 50%;
+}
+
+.textInput{
+  position: fixed;
+  padding: 6px;
+  padding-left: 15px;
+  color: #ffffff;
+  background-color: #000000;
+  outline: none;
+
+  border-radius: 5px;
+  border-color: rgb(54, 54, 54);
+  border-style: solid;
+  border-width: 1px;
+
+  top: 320px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 250px;
+
+  font-family: System_SubLime;
+}
+
 #Iconography{
   background-image: url(System_Imagery/Other/WhiteLogo.png);
   background-size: cover;
@@ -350,7 +385,7 @@ body {
 }
 
 #Iconography3{
-    background-image: url(System_Imagery/Iconography/AppImg.png);
+  background-image: url(System_Imagery/Iconography/AppImg.png);
   background-size: cover;
   width: 100px;
   height: 100px;
@@ -359,6 +394,61 @@ body {
   position: fixed;
   left: 50%;
   transform: translate(-50%, 0%);
+}
+
+#LoginPage{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.752);
+  position: fixed;
+  z-index: 2000000;
+  backdrop-filter: blur(20px);
+  display: none;
+
+  animation-name: FadeIn;
+  animation-duration: 0.2s;
+}
+
+#Username{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -20%);
+  font-size: 30px;
+}
+
+#Username1{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 170%);
+  font-size: 15px;
+  color: #d1d1d1;
+}
+
+#Breathe{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 300%);
+  font-size: 15px;
+  color: #d1d1d1;
+}
+
+#PFP{
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  border-radius: 200px;
+  background-color: #000000;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -120%);
+
+  border-color: rgb(74, 74, 74);
+  border-width: 1px;
+  border-style: solid;
 }
 
 #BootFail{
@@ -376,6 +466,7 @@ body {
   background-color: rgb(0, 0, 0);
   position: absolute;
   display: block;
+  cursor: none;
 }
 
 #ShutdownUI{
@@ -384,6 +475,7 @@ body {
   background-color: rgb(0, 0, 0);
   position: fixed;
   display: none;
+  cursor: none;
 }
 
 #proceedoobe{
@@ -507,7 +599,7 @@ margin-top: 15px;
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 90%);
+  transform: translate(-50%, 250%);
 }
 
 .RightClickButton{
